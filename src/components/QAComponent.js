@@ -47,13 +47,16 @@ function QAComponent() {
           <SmartToyIcon color="primary" sx={{ mr: 1 }} />
           Enterprise Chatbot
         </Typography>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: 'flex', gap: 12, marginBottom: 24 }}
+        >
           <TextField
             fullWidth
             variant="outlined"
             label="Ask a question"
             value={question}
-            onChange={e => dispatch(setQuestion(e.target.value))}
+            onChange={(e) => dispatch(setQuestion(e.target.value))}
             disabled={loading}
             required
             autoFocus
@@ -70,11 +73,15 @@ function QAComponent() {
         </form>
         {answer && (
           <Box sx={{ mb: 3, p: 2, bgcolor: '#f0f0f0', borderRadius: 2 }}>
-            <Typography variant="subtitle1"><b>Bot:</b> {answer}</Typography>
+            <Typography variant="subtitle1">
+              <b>Bot:</b> {answer}
+            </Typography>
           </Box>
         )}
         <Divider sx={{ my: 2 }} />
-        <Typography variant="h6" gutterBottom>Conversation History</Typography>
+        <Typography variant="h6" gutterBottom>
+          Conversation History
+        </Typography>
         <List sx={{ maxHeight: 250, overflow: 'auto' }}>
           {history.length === 0 && <Typography>No conversation yet.</Typography>}
           {history.map((item, index) => (
@@ -97,3 +104,4 @@ function QAComponent() {
 }
 
 export default QAComponent;
+
